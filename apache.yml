@@ -12,6 +12,10 @@
     service:
       name: httpd
       state: started
+  - name: Deploy static website
+      copy:
+        src: index.html
+        dest: /var/www/html/
   - name: Create firewall rule for apache service
     firewalld:
       service: http
